@@ -6,7 +6,6 @@
     <title>Invision Studio</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-    <link rel="icon" type="" href="">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @media (min-width: 640px) {
@@ -28,6 +27,70 @@
             /* Defines the 3 columns: Left Panel (20%), Canvas (60%), Right Panel (20%) */
             grid-template-columns: 20% 60% 20%;
             overflow: hidden; /* Important for nested scrolling */
+        }
+        #canvas-wrapper {
+            /* border: 2px solid #333;
+            padding: 2px;
+            display: inline-block; */
+            background: #f5f5f5;
+        }
+
+        .checkerboard {
+            position: absolute;
+            inset: 0;
+            background: 
+            conic-gradient(#ccc 25%, #eee 0 50%, #ccc 0 75%, #eee 0) 
+            0 0 / 20px 20px;
+            z-index: 0;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+
+        #brushCursor {
+            position: absolute;
+            pointer-events: none;
+            border: 1px solid white;
+            border-radius: 50%;
+            mix-blend-mode: difference;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        #canvas-wrapper {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin-top: 20px;
+        }
+
+        #canvas-wrapper .checkerboard {
+            position: absolute;
+            inset: 0;
+            background:
+                conic-gradient(#ccc 25%, #eee 0 50%, #ccc 0 75%, #eee 0)
+                0 0 / 22px 22px;
+            z-index: 0;
+        }
+
+        #canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            /* cursor: crosshair; */
+        }
+
+        #brushCursor {
+            position: absolute;
+            /* border: 2px solid red; */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 3;
         }
 
         /* Responsive adjustments for smaller screens (e.g., tablet landscape) */
@@ -66,11 +129,6 @@
     </script>
     @livewireStyles
 </head>
-<body>
-
-    {{-- Semua halaman akan muncul di sini --}}
     @yield('content')
 
     @livewireScripts
-</body>
-</html>

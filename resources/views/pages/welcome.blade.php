@@ -3,7 +3,5 @@
 @include('components.sidebar')
 
 <body>
-    <main>
-        
-    </main>
+
 </body>

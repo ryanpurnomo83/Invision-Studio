@@ -10,7 +10,8 @@
 @php
     $file = ["New", "Open", "Open More", "Share", "Save", "Save as PSD", "Save More", "Export As", "Print", "Export Layers", "Export Color Lookup"];
     $edit = ["Undo/Redo", "Step Backward", "Step Forward"];
-
+    $image = ["Mode", "Adjustments", "Auto Tone", "Auto Contrast", "Auto Color", "Reduce Color"];
+    $layer = ["New Layer", "Duplicate Layer", "Duplicate Into", "Delete"];
 @endphp
 
 <nav class="bg-white shadow-lg sticky top-0 z-50">
@@ -44,10 +45,6 @@
                     </div>
                  </details>
                 </div>
-
-                <!-- <a href="#" class="nav-link text-gray-500 hover:text-indigo-600 py-2 text-sm font-medium">
-                    Edit
-                </a> -->
                 
                 <div class="relative">
                  <details class="group">
@@ -65,9 +62,22 @@
                  </details>
                 </div>
 
-                <a href="#" class="nav-link text-gray-500 hover:text-indigo-600 py-2 text-sm font-medium">
-                     Image
-                </a>
+                <div class="relative">
+                    <details class="group">
+                        <summary class="nav-link list-none text-gray-500 hover:text-indigo-600 py-2 text-sm font-medium cursor-pointer">
+                            Image
+                        </summary>
+
+                        <div class="absolute bg-white shadow-lg rounded-md mt-2 w-40 py-1 z-50">
+                            @foreach ($image as $item)
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100">
+                                    {{ $item }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </details>
+                </div>
+
                 <a href="#" class="nav-link text-gray-500 hover:text-indigo-600 py-2 text-sm font-medium">
                      Layer
                 </a>
