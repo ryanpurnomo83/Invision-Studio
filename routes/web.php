@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('/editor', function(){
     return view('/pages/editor');
-});
+})->name('editor');
 
 Route::get('/', function(){
     return view('/pages/welcome');
