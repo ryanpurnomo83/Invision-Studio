@@ -20,8 +20,8 @@
 
                 <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="#" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-150">
-                    Invision Studio
+                <a href="#" class="font-bold text-indigo-600 hover:text-indigo-800 transition duration-150">
+                    <img src="{{ asset('images/Invision-Studio-Logo.png'); }}" class="h-10 w-10 object-contain">
                 </a>
             </div>
 

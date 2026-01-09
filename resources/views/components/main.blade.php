@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="{{ asset('images/Invision-Studio-Logo.png'); }}" >
     <style>
         @media (min-width: 640px) {
             /* Ensure the mobile menu is hidden on desktop */
@@ -62,8 +64,6 @@
 
         #canvas-wrapper {
             position: relative;
-            width: 800px;
-            height: 600px;
             margin-top: 20px;
         }
 
@@ -93,6 +93,17 @@
             z-index: 3;
         }
 
+        .waveform {
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255,255,255,0.4),
+                rgba(255,255,255,0.4) 2px,
+                transparent 2px,
+                transparent 6px
+            );
+        }
+
         /* Responsive adjustments for smaller screens (e.g., tablet landscape) */
         @media (max-width: 1024px) {
             .main-editor-area {
@@ -103,6 +114,7 @@
                 display: none;
             }
         }
+        
         @media (max-width: 768px) {
             .main-editor-area {
                 grid-template-columns: 1fr; /* Stack everything on very small screens, which is common for mobile/editor apps */
